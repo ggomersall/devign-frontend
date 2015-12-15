@@ -1,5 +1,5 @@
 angular
-  .module('devigner', ['angular-jwt', 'ui.router', 'ngResource'])
+  .module('devigner', ['angular-jwt', 'ui.router', 'ngResource', 'ngFileUpload'])
   .constant('API', 'http://localhost:3000/api')
   .config(MainRouter)
   .config(function($httpProvider){
