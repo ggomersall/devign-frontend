@@ -1,0 +1,15 @@
+<h1>SHOWING ALL THE USERS</h1>
+<ul>
+  <li ng-repeat="user in users.all">
+    <div class="container">
+      <div class="panel panel-default">
+        <a class="panel-link" ui-sref="user_show({ id:user.username })" ng-click="users.getUser(user)">
+          <div class="panel-body">
+            <h1>{{ user.username }}</h1>
+            <p>{{ user.email }}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </li>
+</ul>
