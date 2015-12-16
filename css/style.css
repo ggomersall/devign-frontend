@@ -85,3 +85,14 @@ footer {
   min-height: 150px;
   background-color: grey;
 }
+
+.user-top {
+  min-height: 400px;
+  background-color: gray;
+  margin-top: -20px;
+}
+
+.user-title{
+  text-align: center;
+  padding-top: 25px;
+}

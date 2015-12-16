@@ -42,7 +42,7 @@ function IdeasController(Idea, API_URL, Upload) {
 
   self.ideaShow = function(idea) {
     console.log(idea)
-    var data = Idea.get({id:idea._id}, function() {
+    var data = Idea.get({ id:idea._id }, function() {
       self.ideaShow = data.idea;
     });
     return data;

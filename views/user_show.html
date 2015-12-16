@@ -1,8 +1,13 @@
-<h1>User Profile</h1>
+<section class="user-top">
+  <h1 class="user-title">{{ users.showUser.username }}</h1>
 
-  <p>Your username is: {{ users.showUser.username }}</p>
   <p>Your fullname is: {{ users.showUser.fullname }}</p>
   <p>Your email is: {{ users.showUser.email }}</p>
+</section>
+
+<h1>User Profile</h1>
+
+  
 
 <hr>
 <h1>IDEA GETS SHOWN HERE!</h1>
@@ -13,11 +18,12 @@
 <div>
   <ul>
     <li ng-repeat="ideas in users.userIdeas">
+    {{ideas}}
       <div class="container">
         <div class="panel panel-default">
           <a class="panel-link" ui-sref="idea_show({ id:idea._id })">
             <div class="panel-body">
-              <img src="">
+              <img ng-src="{{ideas.image}}">
               <h1>{{ ideas.name }}</h1>
               <p>{{ ideas.description }}</p>
             </div>
