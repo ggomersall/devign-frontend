@@ -18,22 +18,25 @@ function IdeasController(Idea, API_URL, Upload) {
     });
   };
 
-  self.ideaCreate = function() {
-    console.log(self.file);
+  self.ideaCreate = function(idea) {
+    data = { 
+        file: self.file,
+        name: self.idea.name,
+        description: self.idea.description
+      }
     Upload.upload({
       url: API_URL + '/upload/single',
-      data: { file: self.file }
+      data: data
     })
     .then(function(res) {
       console.log("Success!", res);
+      // 
+      // console.log(self.idea)
     })
     .catch(function(err) {
-      console.log('hello there')
       console.log("Error!", err);
     });
-
-    // Idea.ideaCreate(self.idea);
-    // self.image = res.file
+    
   };
 
   self.ideaShow = function(idea) {
@@ -46,5 +49,5 @@ function IdeasController(Idea, API_URL, Upload) {
     
   }
 
-  // return self;
+  return self;
 }
