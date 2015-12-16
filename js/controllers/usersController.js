@@ -2,9 +2,17 @@ angular
   .module('devigner')
   .controller('usersController', UserController);
 
-UserController.$inject = ['User', 'TokenService', '$location'];
-function UserController(User, TokenService, $location) {
+UserController.$inject = ['User', 'TokenService', '$location', '$rootScope', '$state'];
+function UserController(User, TokenService, $location, $rootScope, $state) {
   var self = this;
+
+  $rootScope.$on('$stateChangeSuccess', function() {
+    if($state.params.id) {
+      User.get({ id: $state.params.id }, function(data) {
+        self.showUser = data.user;
+      });
+    }
+  });
 
   self.all = [];
   self.user = {};

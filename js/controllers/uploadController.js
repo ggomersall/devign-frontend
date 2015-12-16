@@ -1,5 +1,5 @@
 angular
-  .module('uploader')
+  .module('devigner')
   .controller('uploadController', uploadController);
 
 uploadController.$inject = ['Upload', 'API_URL'];

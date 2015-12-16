@@ -3,7 +3,7 @@
   <li ng-repeat="user in users.all">
     <div class="container">
       <div class="panel panel-default">
-        <a class="panel-link" ui-sref="user_show({ id:user.username })" ng-click="users.getUser(user)">
+        <a class="panel-link" ui-sref="user_show({ id:user._id })">
           <div class="panel-body">
             <h1>{{ user.username }}</h1>
             <p>{{ user.email }}</p>

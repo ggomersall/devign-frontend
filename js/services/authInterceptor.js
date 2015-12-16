@@ -2,21 +2,21 @@ angular
   .module('devigner')
   .factory('authInterceptor', AuthInterceptor);
 
-AuthInterceptor.$inject = ["API", "TokenService"];
-function AuthInterceptor(API, TokenService) {
+AuthInterceptor.$inject = ["API_URL", "TokenService"];
+function AuthInterceptor(API_URL, TokenService) {
 
   return {
     request: function(config){
       var token = TokenService.getToken();
 
-      if (config.url.indexOf(API) === 0 && token) {
+      if (config.url.indexOf(API_URL) === 0 && token) {
         config.headers.Authorization = 'Bearer ' + token;
       }
       return config;
     },
 
     response: function(res){
-      if (res.config.url.indexOf(API) === 0 && res.data.token) {
+      if (res.config.url.indexOf(API_URL) === 0 && res.data.token) {
         TokenService.saveToken(res.data.token);
       }
       return res;

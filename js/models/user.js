@@ -2,11 +2,11 @@ angular
   .module('devigner')
   .factory('User', User);
 
-User.$inject = ['$resource', 'API'];
+User.$inject = ['$resource', 'API_URL'];
 
-function User($resource, API) {
+function User($resource, API_URL) {
   return $resource(
-    API+ '/users/:id',
+    API_URL+ '/users/:id',
     {id: '@id'},
     {
       'get': {method: 'GET'},
@@ -15,11 +15,11 @@ function User($resource, API) {
       'remove': {method: 'DELETE'},
       'delete': {method: 'DELETE'},
       'login': {
-        url: API + '/login',
+        url: API_URL + '/login',
         method: 'POST'
       },
       'signup': {
-        url: API + '/signup',
+        url: API_URL + '/signup',
         method: 'POST'
       }
     }
