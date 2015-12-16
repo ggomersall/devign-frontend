@@ -16,8 +16,6 @@ function UserController(User, TokenService, $location, $rootScope, $state) {
 
   self.all = [];
   self.user = {};
-  self.whatever = {};
-  self.showUser = 'gareth'
 
   function handleLogin(res) {
     var token = res.token ? res.token : null;

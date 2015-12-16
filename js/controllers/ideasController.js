@@ -2,13 +2,14 @@ angular
   .module('devigner')
   .controller('ideasController', IdeasController);
 
-IdeasController.$inject = ['Idea'];
+IdeasController.$inject = ['Idea', 'API_URL', 'Upload'];
 
-function IdeasController(Idea) {
+function IdeasController(Idea, API_URL, Upload) {
   var self = this;
 
-  self.all = [] ;
+  self.all = [];
   self.idea = {};
+  self.file = {};
 
   self.ideasIndex = function() {
     Idea.query(function(res) {
@@ -17,7 +18,20 @@ function IdeasController(Idea) {
   };
 
   self.ideaCreate = function() {
-    Idea.ideaCreate(self.idea);
+
+    Upload({
+      url: API_URL + '/upload/single',
+      data: { file: self.file }
+    })
+    .then(function(res) {
+      console.log("Success!", res);
+    })
+    .catch(function(err) {
+      console.log("Error!", err);
+    });
+
+    // Idea.ideaCreate(self.idea);
+    // self.image = res.file
   };
 
   self.ideaShow = function(idea) {
@@ -29,4 +43,6 @@ function IdeasController(Idea) {
   self.ideaDelete = function() {
     
   }
+
+  return self;
 }

@@ -1,0 +1,17 @@
+<h1>SHOWING ALL THE IDEAS</h1>
+<div ng-controller="ideasController as ideas">
+  <ul>
+    <li ng-repeat="idea in ideas.all">
+      <div class="container">
+        <div class="panel panel-default">
+          <a class="panel-link" ui-sref="idea_show({ id:idea._id })">
+            <div class="panel-body">
+              <h1>{{ idea.name }}</h1>
+              <p>{{ user.description }}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
