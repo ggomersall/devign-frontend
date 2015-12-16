@@ -16,6 +16,8 @@ function UserController(User, TokenService, $location, $rootScope, $state) {
 
   self.all = [];
   self.user = {};
+  // you've created an empty array to have a reference to the users ideas
+  self.userIdeas = [];
 
   function handleLogin(res) {
     var token = res.token ? res.token : null;
@@ -52,9 +54,11 @@ function UserController(User, TokenService, $location, $rootScope, $state) {
   };
 
   self.getUser = function(user) {
-    var data = User.get({id:user._id}, function() {
+    User.get({id:user._id}, function() {
       self.showUser = data.user;
+      self.userIdeas = data.ideas;
     });
+
   }
 
   self.isLoggedIn = function() {
@@ -63,9 +67,14 @@ function UserController(User, TokenService, $location, $rootScope, $state) {
   }
 
   if(self.isLoggedIn()) {
-
+    console.log("isloggedIn")
     self.getUsers();
-    self.user = TokenService.decodeToken();
+    var user = TokenService.decodeToken();
+    User.get({ id:user._id }, function(data) {
+      self.showUser = data.user;
+      // added userIdeas un the decodetoken function to include the users ideas
+      self.userIdeas = data.ideas;
+    });
     // $location.path('/users');
   };
 
