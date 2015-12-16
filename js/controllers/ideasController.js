@@ -19,19 +19,19 @@ function IdeasController(Idea, API_URL, Upload) {
   };
 
   self.ideaCreate = function(idea) {
-    data = { 
-        file: self.file,
-        name: self.idea.name,
-        description: self.idea.description
-      }
+    // data = { 
+    //     file: self.file,
+    //     name: self.idea.name,
+    //     description: self.idea.description
+    //   }
     Upload.upload({
       url: API_URL + '/upload/single',
-      data: data
+      data: { file: self.file }
     })
     .then(function(res) {
-      console.log("Success!", res);
-      // 
-      // console.log(self.idea)
+      Idea.save(self.idea, function() {
+        console.log("Success!", res);
+      });
     })
     .catch(function(err) {
       console.log("Error!", err);

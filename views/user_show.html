@@ -1,16 +1,20 @@
 <section class="user-top">
   <h1 class="user-title">{{ users.showUser.username }}</h1>
+  <form ng-show="!users.showUser.user_image" id="signup" ng-submit="users.uploadProfilePic()">
+    <div class="form-group">
+      <label for="image">Profile Pic</label>
+      <input required="required" type="file" ngf-select id="image" ng-model="users.file" name="file">
+      <p class="help-block">Choose your profile image.</p>
+      <button>Submit</button>
+    </div>
+  </form>
+
+  <img ng-src="{{users.showUser.user_image}}" ng-if="users.showUser.user_image">
 
   <p>Your fullname is: {{ users.showUser.fullname }}</p>
   <p>Your email is: {{ users.showUser.email }}</p>
 </section>
 
-<h1>User Profile</h1>
-
-  
-
-<hr>
-<h1>IDEA GETS SHOWN HERE!</h1>
 <p><a class="btn btn-primary btn-lg" ui-sref-active="active" ui-sref="add_idea" role="button">Add Idea</a></p>
 
 
@@ -18,12 +22,11 @@
 <div>
   <ul>
     <li ng-repeat="ideas in users.userIdeas">
-    {{ideas}}
       <div class="container">
         <div class="panel panel-default">
           <a class="panel-link" ui-sref="idea_show({ id:idea._id })">
             <div class="panel-body">
-              <img ng-src="{{ideas.image}}">
+              <img class="idea-image" ng-src="{{ideas.image}}" ng-if="ideas.image">
               <h1>{{ ideas.name }}</h1>
               <p>{{ ideas.description }}</p>
             </div>

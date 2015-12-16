@@ -2,8 +2,8 @@ angular
   .module('devigner')
   .controller('usersController', UserController);
 
-UserController.$inject = ['User', 'TokenService', '$location', '$rootScope', '$state'];
-function UserController(User, TokenService, $location, $rootScope, $state) {
+UserController.$inject = ['User', 'TokenService', '$location', '$rootScope', '$state', 'Upload', 'API_URL'];
+function UserController(User, TokenService, $location, $rootScope, $state, Upload, API_URL) {
   var self = this;
 
   $rootScope.$on('$stateChangeSuccess', function() {
@@ -33,7 +33,6 @@ function UserController(User, TokenService, $location, $rootScope, $state) {
     User.login(self.user, handleLogin);
     // this redirects a user to certain path after login
     $location.path('/users');
-
   };
 
   self.signup = function() {
@@ -66,8 +65,20 @@ function UserController(User, TokenService, $location, $rootScope, $state) {
     return !!TokenService.getToken();
   }
 
+  self.uploadProfilePic = function() {
+    Upload.upload({
+      url: API_URL + '/upload/single',
+      data: { file: self.file }
+    })
+    .then(function(res) {
+      self.showUser.user_image = res.data.filename;
+      User.update(self.showUser, function(res) {
+        console.log(res);
+      });
+    });
+  }
+
   if(self.isLoggedIn()) {
-    console.log("isloggedIn")
     self.getUsers();
     var user = TokenService.decodeToken();
     User.get({ id:user._id }, function(data) {

@@ -7,9 +7,10 @@ User.$inject = ['$resource', 'API_URL'];
 function User($resource, API_URL) {
   return $resource(
     API_URL+ '/users/:id',
-    {id: '@id'},
+    {id: '@_id'},
     {
       'get': {method: 'GET'},
+      'update': {method: 'PUT'},
       'save': {method: 'POST'},
       'query': {method: 'GET', isArray: false},
       'remove': {method: 'DELETE'},
