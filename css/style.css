@@ -2,10 +2,86 @@ body {
 
 }
 
+.navbar {
+  position: relative;
+  min-height: 75px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 43px;
+}
+
+.navbar-nav>li>a {
+  /*padding-top: 10px;
+  padding-bottom: 10px;*/
+  line-height: 43px;
+}
 .center {
   text-align: center;
 }
 
 .panel-link:hover {
   text-decoration: none;
+}
+
+.home-top-jumbo {
+  background-color: red;
+  background-image: url('/images/52.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 640px;
+  margin-top: -20px;
+
+}
+
+
+.jumbotron .home-top-jumbo .h1, .jumbotron h1 {
+  margin-top: 100px;
+  color: purple;
+  font-size: 80px;
+}
+
+.home-top-jumbo p {
+  margin-top: 45px;
+  margin-bottom: 15px;
+  font-size: 31px;
+  font-weight: 300;
+  color: white;
+}
+
+
+.home-users-section {
+  min-height: 450px;
+}
+
+.home-users-section h1{
+  text-align: center;
+}
+
+.home-testi-section{
+  min-height: 400px;
+}
+
+.home-testi-section h1{
+  text-align: center;
+}
+
+.home-signup-section {
+  background-image: url('/images/HNCK5658.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 470px;
+}
+
+footer {
+  min-height: 150px;
+  background-color: grey;
 }
