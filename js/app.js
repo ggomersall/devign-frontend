@@ -45,6 +45,11 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       url: "/signup",
       templateUrl: "views/signup.html"
     })
+    .state('add_idea', {
+      data: {'requiresLogin': true},
+      url: '/add_idea',
+      templateUrl: 'views/add_idea.html'
+    })
     
 
   $urlRouterProvider.otherwise("/");
