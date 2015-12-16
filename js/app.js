@@ -50,7 +50,14 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       url: '/add_idea',
       templateUrl: 'views/add_idea.html'
     })
-    
+    .state('idea_show', {
+      url: '/idea_show',
+      templateUrl: 'views/idea_show.html'
+    })
+    .state('ideas', {
+      url: '/ideas',
+      templateUrl: 'views/idea_show.html'
+    })
 
   $urlRouterProvider.otherwise("/");
 }

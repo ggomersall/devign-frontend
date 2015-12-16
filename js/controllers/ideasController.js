@@ -12,12 +12,6 @@ function IdeasController(Idea, API_URL, Upload) {
   self.file = {};
   // this.newIdea = {};
 
-  self.ideasIndex = function() {
-    Idea.query(function(res) {
-      self.all = res.ideas;
-    });
-  };
-
   self.ideaCreate = function(idea) {
     data = { 
         file: self.file,
@@ -39,10 +33,18 @@ function IdeasController(Idea, API_URL, Upload) {
     
   };
 
+  self.ideasIndex = function() {
+    Idea.query(function(res) {
+      self.all = res.ideas;
+    });
+  };
+
   self.ideaShow = function(idea) {
+    console.log(idea)
     var data = Idea.get({id:idea._id}, function() {
       self.ideaShow = data.idea;
     });
+    return data;
   }
 
   self.ideaDelete = function() {

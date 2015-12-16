@@ -4,6 +4,24 @@
   <p>Your fullname is: {{ users.showUser.fullname }}</p>
   <p>Your email is: {{ users.showUser.email }}</p>
 
-
+<hr>
 <h1>IDEA GETS SHOWN HERE!</h1>
 <p><a class="btn btn-primary btn-lg" ui-sref-active="active" ui-sref="add_idea" role="button">Add Idea</a></p>
+
+
+<div ng-controller="ideasController as ideas">
+  <ul>
+    <li ng-repeat="ideas in ideas.all">
+      <div class="container">
+        <div class="panel panel-default">
+          <a class="panel-link" ui-sref="idea_show({ id:idea._id })">
+            <div class="panel-body">
+              <h1>{{ ideas.name }}</h1>
+              <p>{{ ideas.description }}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

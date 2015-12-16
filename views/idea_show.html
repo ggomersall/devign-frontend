@@ -1,1 +1,7 @@
 <h1>THIS IS THE IDEA</h1>
+
+<div ng-controller="ideasController as ideas">
+  <p>Your idea name is: {{ ideas.ideaShow.name }}</p>
+  <p>Your idea description is: {{ ideas.ideaShow.description }}</p>
+  <p>You created this: {{ users.showUser.username }}</p>
+</div>
