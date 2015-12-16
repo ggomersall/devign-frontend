@@ -10,7 +10,7 @@ function IdeasController(Idea, API_URL, Upload) {
   self.all = [];
   self.idea = {};
   self.file = {};
-  this.newIdea = {};
+  // this.newIdea = {};
 
   self.ideasIndex = function() {
     Idea.query(function(res) {
@@ -19,15 +19,16 @@ function IdeasController(Idea, API_URL, Upload) {
   };
 
   self.ideaCreate = function() {
-
+    console.log(self.file);
     Upload.upload({
       url: API_URL + '/upload/single',
-      data: { file: self.newIdea.file }
+      data: { file: self.file }
     })
     .then(function(res) {
       console.log("Success!", res);
     })
     .catch(function(err) {
+      console.log('hello there')
       console.log("Error!", err);
     });
 
