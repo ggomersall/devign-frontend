@@ -10,6 +10,7 @@ function IdeasController(Idea, API_URL, Upload) {
   self.all = [];
   self.idea = {};
   self.file = {};
+  this.newIdea = {};
 
   self.ideasIndex = function() {
     Idea.query(function(res) {
@@ -19,9 +20,9 @@ function IdeasController(Idea, API_URL, Upload) {
 
   self.ideaCreate = function() {
 
-    Upload({
+    Upload.upload({
       url: API_URL + '/upload/single',
-      data: { file: self.file }
+      data: { file: self.newIdea.file }
     })
     .then(function(res) {
       console.log("Success!", res);
@@ -44,5 +45,5 @@ function IdeasController(Idea, API_URL, Upload) {
     
   }
 
-  return self;
+  // return self;
 }
