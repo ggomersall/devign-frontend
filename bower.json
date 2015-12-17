@@ -1,0 +1,26 @@
+{
+  "name": "devigner",
+  "homepage": "",
+  "authors": [
+    "panox <ggomersall@gmail.com>"
+  ],
+  "description": "bower file for devigner",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "test"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "ng-file-upload": "~10.1.9"
+  }
+}
