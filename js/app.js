@@ -24,7 +24,7 @@ function MainRouter($stateProvider, $urlRouterProvider) {
     })
     .state('user_show', {
       url: '/users/:id',
-      templateUrl: '/views/user_show.html'
+      templateUrl: 'views/user_show.html'
       // authenticate: true
     })
     .state('login', {
