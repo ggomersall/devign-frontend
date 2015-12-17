@@ -22,7 +22,7 @@
   <ul>
     <li ng-repeat="ideas in users.userIdeas">
       <div class="container">
-        <div class="panel panel-default">
+        <div class="panel panel-default idea-panel">
           <a class="panel-link" ui-sref="idea_show({ id:idea._id })">
             <div class="panel-body">
               <img class="idea-image" ng-src="{{ideas.image}}" ng-if="ideas.image">

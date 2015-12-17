@@ -107,11 +107,19 @@ footer {
   margin-right: auto;
 }
 
-.idea-image img {
+ul
+{
+    list-style-type: none;
+}
+
+.idea-image {
   margin: 0 auto;
   height: 150px;
   
-  
+}
+
+.idea-panel {
+  width: 300px;
 }
 
 .banner-info {
