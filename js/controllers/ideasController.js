@@ -19,11 +19,11 @@ function IdeasController(Idea, API_URL, Upload) {
   };
 
   self.ideaCreate = function(idea) {
-    data = { 
-        file: self.file,
-        name: self.idea.name,
-        description: self.idea.description
-      }
+    // data = { 
+    //     file: self.file,
+    //     name: self.idea.name,
+    //     description: self.idea.description
+    //   }
     Upload.upload({
       url: API_URL + '/upload/single',
       data: { file: self.file }
