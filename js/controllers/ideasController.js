@@ -29,7 +29,7 @@ function IdeasController(Idea, API_URL, Upload) {
       data: { file: self.file }
     })
     .then(function(res) {
-      self.idea.filename = res.data.filename
+      self.idea.filename = res.data.file
       Idea.save(self.idea, function() {
         console.log("Success!", res);
       });
