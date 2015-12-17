@@ -1,5 +1,5 @@
 
-<section class="user-top" style="background: url('{{users.showUser.user_image}}') no-repeat center; background-size: cover;">
+<section style="background:linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('{{users.showUser.user_image}}') no-repeat center; background-size: cover;" class="user-top">
 
   <h1 class="user-title">{{ users.showUser.username }}</h1>
   <form ng-show="!users.showUser.user_image" id="signup" ng-submit="users.uploadProfilePic()">

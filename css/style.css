@@ -91,11 +91,10 @@ footer {
   background-color: gray;
   margin-top: -20px;
   position: relative;
-
 }
 
 
-.user-top:before {
+/*.user-top:before {
   content: ' ';
   position: absolute;
   top: 0;
@@ -105,11 +104,12 @@ footer {
   z-index: -1;
   filter: blur(13px);
   -webkit-filter: blur(13px);
-}
+}*/
 
 .user-title{
   text-align: center;
   padding-top: 25px;
+  color: white;
 }
 
 .user-image {
@@ -129,4 +129,6 @@ footer {
 
 .banner-info {
   text-align: center;
+  color: white;
+
 }
