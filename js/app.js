@@ -4,7 +4,7 @@ angular
       if(/localhost/.test(window.location.host)){
         return "http://localhost:3000/api"
       } else {
-        return "http://players-app.herokuapp.com/api"
+        return "https://devignapi.herokuapp.com/api"
       }
     }())
   .config(MainRouter)
