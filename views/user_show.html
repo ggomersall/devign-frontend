@@ -1,4 +1,6 @@
-<section class="user-top">
+
+<section class="user-top" style="background: url('{{users.showUser.user_image}}') no-repeat center; background-size: cover;">
+
   <h1 class="user-title">{{ users.showUser.username }}</h1>
   <form ng-show="!users.showUser.user_image" id="signup" ng-submit="users.uploadProfilePic()">
     <div class="form-group">
@@ -8,15 +10,12 @@
       <button>Submit</button>
     </div>
   </form>
-
-  <img ng-src="{{users.showUser.user_image}}" ng-if="users.showUser.user_image">
-
-  <p>Your fullname is: {{ users.showUser.fullname }}</p>
-  <p>Your email is: {{ users.showUser.email }}</p>
+  <div>
+    <img class="user-image" ng-src="{{users.showUser.user_image}}" ng-if="users.showUser.user_image">
+  </div>
+  <span class="banner-info"><h4>{{ users.showUser.fullname }}</h4></span>
+  <p class="banner-info"><a class="btn btn-primary btn-lg" ui-sref-active="active" ui-sref="add_idea" role="button">Add Idea</a></p>
 </section>
-
-<p><a class="btn btn-primary btn-lg" ui-sref-active="active" ui-sref="add_idea" role="button">Add Idea</a></p>
-
 
 <!-- {{ users }} -->
 <div>
