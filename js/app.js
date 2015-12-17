@@ -1,6 +1,6 @@
 angular
   .module('devigner', ['angular-jwt', 'ui.router', 'ngResource', 'ngFileUpload'])
-  .constant('API_URL', 'http://localhost:3000/api')
+  .constant('API_URL', 'https://devignapi.herokuapp.com/api')
   .config(MainRouter)
   .config(function($httpProvider){
     $httpProvider.interceptors.push('authInterceptor');
