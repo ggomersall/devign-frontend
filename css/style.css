@@ -32,7 +32,7 @@ body {
 
 .home-top-jumbo {
   background-color: red;
-  background-image: url('./images/52.jpg');
+  background-image: url('images/52.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -74,7 +74,7 @@ body {
 }
 
 .home-signup-section {
-  background-image: url('./images/HNCK5658.jpg');
+  background-image: url('images/HNCK5658.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
