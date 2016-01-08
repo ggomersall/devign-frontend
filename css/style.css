@@ -22,6 +22,12 @@ body {
   padding-bottom: 10px;*/
   line-height: 43px;
 }
+
+.navbar-toggle{
+  margin-top: 20px;
+  border: none;
+}
+
 .center {
   text-align: center;
 }
